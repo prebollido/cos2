@@ -1,0 +1,62 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1774061949536,
+      "tag": "0000_real_fantastic_four",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1774070832715,
+      "tag": "0001_huge_molecule_man",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1774078210486,
+      "tag": "0002_sweet_nomad",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1774525459708,
+      "tag": "0003_slimy_infant_terrible",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1774797244315,
+      "tag": "0004_old_ultimatum",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1774800174587,
+      "tag": "0005_awesome_centennial",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1774971532683,
+      "tag": "0006_remarkable_penance",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1774978383166,
+      "tag": "0007_broken_masque",
+      "breakpoints": true
+    }
+  ]
+}

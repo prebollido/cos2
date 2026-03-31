@@ -1,0 +1,1 @@
+ALTER TABLE "temp_users" ADD COLUMN "two_factor_enabled" boolean DEFAULT false;
