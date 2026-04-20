@@ -9,7 +9,9 @@
 <div class="flex flex-col min-h-screen font-Inter bg-white relative">
     
     <header class="flex justify-between items-center px-8 lg:px-12 xl:px-24 py-6 bg-white border-b border-gray-200">
-        <img src="/images/logo.svg" alt="Certificate of Service Logo" class="h-15 w-auto" />
+        <a href="/dashboard" class="hover:opacity-50 transition-opacity">
+            <img src="/images/logo.svg" alt="Certificate of Service Logo" class="h-15 w-auto" />
+        </a>
         
         <a href="/" class="text-base font-bold text-black hover:underline">Logout</a>
     </header>
@@ -39,11 +41,11 @@
                     </button>
                 {/each}
                 
-                <button class="flex flex-col w-[150px] text-center cursor-pointer hover:opacity-80 transition-opacity">
+                <a href="/fill_up" class="flex flex-col w-[150px] text-center cursor-pointer hover:opacity-80 transition-opacity block border-none no-underline">
                     <div class="h-[150px] w-full bg-[#d9d9d9] flex items-center justify-center">
                         <span class="text-7xl text-gray-500 font-light leading-none pb-2">+</span>
                     </div>
-                </button>
+                </a>
             </div>
             
             <div class="flex flex-col md:flex-row justify-between items-end md:items-center mt-16">
@@ -69,7 +71,7 @@
                     </button>
                 </div>
 
-                <div class="bg-[#d9d9d9] p-4">
+                <button class="w-full bg-[#d9d9d9] p-4 text-left cursor-pointer hover:bg-gray-200 transition-colors border-none">
                     <div class="flex items-center gap-3 mb-1">
                         <span class="w-1.5 h-15 bg-gray-500"></span>
                         <div class="flex flex-col">
@@ -77,7 +79,7 @@
                             <p class="text-xs text-black m-0 leading-tight">Upload JSON file to continue progress</p>
                         </div>
                     </div>
-                </div>
+                </button>
                 
                 <div class="mt-auto ml-4 mb-12 pt-12">
                     <h3 class="text-xl font-bold m-0 mb-1 text-black">Account<br/>expires in:</h3>
