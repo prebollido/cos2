@@ -1,7 +1,6 @@
 <script>
-    let certificates = $state([
-        { title: 'Certificate 1' }
-    ]);
+    //Import the shared vault 
+    import { certStore } from '$lib/store.svelte.js';
     
     let sidebarOpen = $state(false); 
 </script>
@@ -34,18 +33,34 @@
             <h1 class="text-4xl font-bold mb-8 text-black">Dashboard</h1>
             
             <div class="flex flex-wrap gap-6 mb-auto">
-                {#each certificates as cert}
-                    <button class="flex flex-col w-[150px] text-center cursor-pointer hover:opacity-80 transition-opacity">
-                        <div class="h-[150px] w-full bg-gray-500 mb-2"></div>
-                        <p class="m-0 text-sm font-medium text-black mx-auto">{cert.title}</p>
-                    </button>
+                
+                {#each certStore.certificates as cert}
+                    <div class="relative group w-[150px]">
+                        
+                        <a href="/fill_up?id={cert.id}" class="flex flex-col w-full text-center cursor-pointer transition-opacity block border-none no-underline group-hover:opacity-80">
+                            <div class="h-[150px] w-full bg-gray-500 mb-2"></div>
+                            <p class="m-0 text-sm font-medium text-black mx-auto">{cert.title}</p>
+                        </a>
+
+                        <button 
+                            onclick={(e) => {
+                                e.preventDefault();  // Stops the <a> tag from activating
+                                e.stopPropagation(); // Stops the click from bubbling up
+                                certStore.deleteCertificate(cert.id);
+                            }}
+                            class="absolute top-2 right-2 bg-red-300 text-white rounded-full w-6 h-6 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity border-none cursor-pointer shadow-md hover:bg-red-600"
+                            title="Delete Certificate"
+                        >
+                            ✕
+                        </button>
+                    </div>
                 {/each}
                 
-                <a href="/fill_up" class="flex flex-col w-[150px] text-center cursor-pointer hover:opacity-80 transition-opacity block border-none no-underline">
+                <button onclick={() => certStore.addCertificate()} class="flex flex-col w-[150px] text-center cursor-pointer hover:opacity-80 transition-opacity bg-transparent border-none p-0">
                     <div class="h-[150px] w-full bg-[#d9d9d9] flex items-center justify-center">
                         <span class="text-7xl text-gray-500 font-light leading-none pb-2">+</span>
                     </div>
-                </a>
+                </button>
             </div>
             
             <div class="flex flex-col md:flex-row justify-between items-end md:items-center mt-16">

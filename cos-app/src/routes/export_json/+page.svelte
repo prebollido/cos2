@@ -1,4 +1,5 @@
 <script>
+    // for local testing only
     let isGenerated = $state(false); 
     let sidebarOpen = $state(false); 
 
@@ -74,7 +75,7 @@
                     </button>
                 </div>
 
-                <a href="/fill_up" class="block bg-[#d9d9d9] p-2 hover:bg-gray-200 transition-colors text-left no-underline cursor-pointer">
+                <a href="/dashboard" class="block bg-[#d9d9d9] p-2 hover:bg-gray-200 transition-colors text-left no-underline cursor-pointer">
                     <div class="flex items-center gap-1">
                         <span class="w-1.5 h-12 bg-gray-500"></span>
                         <div class="flex flex-col">
