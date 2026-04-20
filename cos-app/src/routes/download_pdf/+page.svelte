@@ -35,14 +35,10 @@
     /* 2. THE MAGIC PRINT RULES */
     @media print {
         /* Hide the entire dashboard UI when printing */
-        .screen-app-ui { 
-            display: none !important; 
-        }
+        .screen-app-ui { display: none !important; }
         
         /* Show the certificate! */
-        .certificate-template { 
-            display: block !important; 
-        }
+        .certificate-template { display: block !important; }
         
         /* Force the browser to print exact colors and borders */
         * {
@@ -50,9 +46,14 @@
             print-color-adjust: exact !important;
         }
 
-        /* Set a standard margin for the PDF page */
+        /* 1. Set margin to 0 to kill the URL and Date */
         @page {
-            margin: 0.5in;
+            margin: 0; 
+        }
+
+        /* 2. Add padding back to the body so your certificate isn't touching the literal edge of the paper */
+        body {
+            padding: 0.5in;
         }
     }
 </style>
@@ -209,7 +210,7 @@
         </div>
     </div>
 
-    <div class="mt-20 space-y-12 pb-16 text-black px-4 w-full">
+    <div class="mt-20 space-y-12 pb-16 text-black px-4 w-full break-inside-avoid print:pt-18">
         <div class="flex flex-col w-80">
             <span class="font-bold mb-2">Attested:</span>
             <div class="border-2 border-gray-400 rounded-2xl px-6 py-2 min-h-[44px] flex items-center justify-center font-bold text-center">
